@@ -6,8 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
     <style>
-       
-    </style>
+        body {
+            background-color: rgb(240, 116, 116);
+            padding: 15px;
+            border: double 2px ivory;
+            width: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 40px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .todo-item {
+            border: 4px double black;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: bisque;
+            display: flex;
+            justify-content: space-between;
+            font-size: 19px;
+        }
+
+        .del-btn {
+            background-color: brown;
+            font-size: 13px;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            height: 17px;
+        }
+
+        .tasks-container {
+            height: 300px;
+            width: auto;
+            overflow-y: scroll;
+            border: 1px none;
+            background: #fff;
+            margin: 5px;
+            padding: 5px;
+        }
+
+           </style>
 </head>
 
 
