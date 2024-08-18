@@ -130,8 +130,26 @@
         }
 
 
-       
-    </script>
-</body>
+        function deleteTask(task) {
+            const taskIndex = tasks.indexOf(task);
+            tasks.splice(taskIndex, 1);
 
-</html>
+            loadTasks();
+        }
+
+        function addTask() {
+            const taskInputElement = document.getElementById('task-input');
+            const task = taskInputElement.value;
+            if (!task) {
+                alert('Please enter a task');
+                return;
+            }
+
+            tasks.push(task);
+            loadTasks();
+
+            taskInputElement.value = '';
+        }
+   
+
+
