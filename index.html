@@ -97,7 +97,40 @@
     </div>
 
     <script>
-      
+        const tasks = [];
+
+        function loadFromLocalStorage() {
+            const allTasks = JSON.parse(localStorage.getItem('allTasks'));
+
+            if (allTasks) {
+                tasks.push(...allTasks)
+            }
+
+            loadTasks();
+        }
+        loadFromLocalStorage();
+
+        function loadTasks() {
+
+            localStorage.setItem('allTasks', JSON.stringify(tasks));
+
+            const tasksContainer = document.getElementById('tasks-container');
+            tasksContainer.innerHTML = '';
+
+            for (const task of tasks) {
+                tasksContainer.innerHTML += `
+                <div class="todo-item">
+                    ${task}
+                    <button  type= "button" class="del-btn" onclick="deleteTask('${task}')">
+                        Remove
+                    </button>
+                </div>
+                `
+            }
+        }
+
+
+       
     </script>
 </body>
 
