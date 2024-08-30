@@ -4,96 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <title>To do list</title>
-    <style>
-        body {
-            background-color: rgb(240, 116, 116);
-            padding: 15px;
-            border: double 2px ivory;
-            width: auto;
-
-        }
-
-        .title {
-            text-align: center;
-            font-size: 40px;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-
-        .todo-item {
-            border: 4px double black;
-            padding: 5px;
-            margin: 5px;
-            border-radius: 5px;
-            background-color: bisque;
-            display: flex;
-            justify-content: space-between;
-            font-size: 19px;
-        }
-
-        .del-btn {
-            background-color: brown;
-            font-size: 13px;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            height: 17px;
-        }
-
-        .tasks-container {
-            height: 300px;
-            width: auto;
-            overflow-y: scroll;
-            border: 1px none;
-            background: #fff;
-            margin: 5px;
-            padding: 5px;
-
-
-        }
-
-        .task-input {
-            margin: 15px 20px;
-            height: 25px;
-            width: 50%;
-            border: solid 1px white;
-            border-radius: 5px;
-        }
-
-        .addTask-btn {
-            margin: 15px 20px;
-            padding: 5px;
-            height: 30px;
-            border: solid white 1px;
-            border-radius: 12px;
-            background-color: rgb(95, 23, 23);
-            color: #fff;
-            font-size: 15px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            cursor: pointer;
-
-        }
-        .addTask-btn:hover {
-            transform: scale(1.2);
-            transition: 2.s;
-            background-color: rgb(71, 17, 17);
-        }
-        .task-input-container{
-            display: flex;
-            justify-content: space-evenly;
-        }
-    </style>
 </head>
 
-<body>
-    <h1 class="title"><b><u>Madhumita's Work Schedule</u></b></h1>
+<body class="bg-zinc-900 text-white">
+    <div class="">
+        <h1 class="title"><b>Madhumita's Work Schedule</b></h1>
 
-    <div id="tasks-container" class="tasks-container"></div>
-    <div class="task-input-container">
-        <input type="text" id="task-input" class="task-input" placeholder="Enter a task">
-        <button type="button" class="addTask-btn" onclick="addTask()">Add Task</button>
+        <div id="tasks-container" class="tasks-container border-[1px] border-zinc-700 bg-zinc-800 rounded-lg"></div>
+        <div class="task-input-container mt-3">
+            <input type="text" id="task-input"
+                class="px-3 py-2 bg-zinc-700 rounded-lg h-1/3 w-1/2 items-center outline-none border-[1px] border-zinc-700 text-white"
+                placeholder="Enter a task">
+            <button type="button" class="bg-blue-500 rounded-full px-3 py-2 text-sm text-center" onclick="addTask()">Add
+                Task</button>
 
+        </div>
     </div>
 
     <script>
@@ -119,9 +47,9 @@
 
             for (const task of tasks) {
                 tasksContainer.innerHTML += `
-                <div class="todo-item">
+                <div class="todo-item bg-zinc-700 text-white outline-none border-[1px] border-zinc-600 px-3 py-2 rounded-lg flex items-center justify-between text-center">
                     ${task}
-                    <button  type= "button" class="del-btn" onclick="deleteTask('${task}')">
+                    <button  type= "button" class="text-center bg-zinc-500 px-2 py-1 rounded-full text-sm" onclick="deleteTask('${task}')">
                         Remove
                     </button>
                 </div>
